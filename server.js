@@ -21,14 +21,14 @@ app.get("/default",function(req,res){
     res.status(200)
     res.json(data)
 })
-app.post("/user",function(req,res){
+app.post("/post",function(req,res){
     console.log(req.stack);
     console.log(req.body);
     console.log(req.url);
     console.log(req.query);
     let data={
-        name:"bricks",
-        age:26
+        name:req.body.name,
+        hobby:req.body.hobby
     }
     res.json(data)
 })

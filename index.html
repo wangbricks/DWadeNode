@@ -11,14 +11,33 @@
     <script type="module">
         import * as $ from "./node_modules/jquery/dist/jquery.js";
     </script>
-    <button id="btn">请求资源</button>
+    <button id="get">GET请求资源</button>
+    <br>
+    <label for=""><input type="text" id="name"> 名字</label>
+    <br>
+    <label for=""><input type="text" id="hobby"> hobby</label>
+    <br>
+    <button id="post">POST请求资源</button>
     <script>
-        const btn = document.getElementById("btn")
-     
-        btn.onclick=()=>{
+        const get = document.getElementById("get")
+        get.onclick=()=>{
             $.ajax({
                 url:"http://127.0.0.1:6060/default",
                 type:"GET"
+            })
+            .then( res=>{
+                console.log(res)
+            } )
+        } 
+
+        const post = document.getElementById("post")
+        post.onclick=()=>{
+            let name = document.getElementById("name").value
+            let hobby = document.getElementById("hobby").value
+            $.ajax({
+                url:"http://127.0.0.1:6060/post",
+                type:"POST",
+                data:{name,hobby}
             })
             .then( res=>{
                 console.log(res)

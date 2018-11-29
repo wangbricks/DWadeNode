@@ -14,10 +14,16 @@ for( var name in interface ){
 //打开浏览器
 var exec = require("child_process").exec;
 function openBrowser(port){
-    let url = "http://"+ip
+    let url = "http://"+ip+":"+port
     switch(process.platform){
         case "win32":
-            exec("start "+url+":"+port)
+            exec("start "+url)
+        break;
+        case "darwin":
+            exec("open "+url)
+        break;
+        case "linux":
+            exec("xdg-open "+url)
         break;
     }
 }
