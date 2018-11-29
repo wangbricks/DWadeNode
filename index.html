@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <button id="btn">请求资源</button>
     <script type="module">
-        import name from"./jquery/jquery.js"
+        import * as $ from "./node_modules/jquery/dist/jquery.js";
     </script>
+    <button id="btn">请求资源</button>
     <script>
         const btn = document.getElementById("btn")
-        // console.log($)
-        // btn.onclick=()=>{
-        //     $.ajax({
-        //         url:"",
-        //         type:"GET"
-        //     })
-        //     .then( res=>{
+     
+        btn.onclick=()=>{
+            // $.ajax({
+            //     url:"",
+            //     type:"GET"
+            // })
+            // .then( res=>{
 
-        //     } )
-        // } 
+            // } )
+            console.log($)
+        } 
     </script>
 </body>
 </html>
