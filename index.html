@@ -16,14 +16,13 @@
         const btn = document.getElementById("btn")
      
         btn.onclick=()=>{
-            // $.ajax({
-            //     url:"",
-            //     type:"GET"
-            // })
-            // .then( res=>{
-
-            // } )
-            console.log($)
+            $.ajax({
+                url:"http://127.0.0.1:6060/default",
+                type:"GET"
+            })
+            .then( res=>{
+                console.log(res)
+            } )
         } 
     </script>
 </body>
